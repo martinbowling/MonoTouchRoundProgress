@@ -18,6 +18,7 @@ namespace RoundProgressViewDemo
 		private UIFont _font;
 		private UIColor _textColor;
 		private UIColor _tintColor;
+		private UIImage _image;
 
 		public float PiePadding {get {
 				return _piePadding;
@@ -86,6 +87,17 @@ namespace RoundProgressViewDemo
 			}
 		}
 
+		public UIImage Image {get {
+				return _image;
+			}
+			set{
+				_image = value;
+				imgView.Image = _image;
+				imgView.SetNeedsDisplay();
+
+			}
+		}
+
 
 		public RPView (RectangleF frame): base(frame)
 		{
@@ -100,7 +112,7 @@ namespace RoundProgressViewDemo
 			this.AddSubview(pieView);
 
 			imgView = new UIImageView(this.Bounds);
-			imgView.Image = UIImage.FromBundle("Images/progress-circle-large.png");
+			imgView.Image = _image;
 			this.AddSubview(imgView);
 
 			lblValue = new UILabel(this.Bounds);

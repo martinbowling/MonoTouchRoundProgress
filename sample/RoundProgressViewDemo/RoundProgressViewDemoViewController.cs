@@ -15,13 +15,16 @@ namespace RoundProgressViewDemo
 		public RoundProgressViewDemoViewController () : base ("RoundProgressViewDemoViewController", null)
 		{
 			roundProgess = new RPView(new RectangleF(20, 10, 166,166));
+			roundProgess.Image = UIImage.FromBundle("Images/progress-circle-large.png");
 			roundProgess.TintColor = UIColor.Blue;
 			roundProgess.TextColor = UIColor.FromRGBA(0.70f,0.70f,0.70f,1.0f);
 			roundProgess.Font = UIFont.SystemFontOfSize(50f); 
 			roundProgess.Progress = 0.5f;
+
 			this.View.Add(roundProgess);
 
 			mRoundProgess = new RPView(new RectangleF(20, 200, 104,104));
+			mRoundProgess.Image = UIImage.FromBundle("Images/progress-circle-medium.png");
 			mRoundProgess.TintColor = UIColor.Green;
 			mRoundProgess.TextColor = UIColor.FromRGBA(0.70f,0.70f,0.70f,1.0f);
 			mRoundProgess.Font = UIFont.SystemFontOfSize(25f); 
@@ -29,6 +32,7 @@ namespace RoundProgressViewDemo
 			this.View.Add(mRoundProgess);
 
 			sRoundProgess = new RPView(new RectangleF(20, 325, 54,54));
+			sRoundProgess.Image = UIImage.FromBundle("Images/progress-circle-small.png");
 			sRoundProgess.TintColor = UIColor.Red;
 			sRoundProgess.TextColor = UIColor.FromRGBA(0.70f,0.70f,0.70f,1.0f);
 			sRoundProgess.Font = UIFont.SystemFontOfSize(15f); 
