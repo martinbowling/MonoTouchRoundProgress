@@ -110,7 +110,7 @@ namespace RoundProgressViewDemo
 			lblValue.ShadowOffset = new SizeF(0,1);
 			this.AddSubview(lblValue);
 
-			PiePadding = 0.10f;
+			PiePadding = 0.0f;
 
 		}
 	}

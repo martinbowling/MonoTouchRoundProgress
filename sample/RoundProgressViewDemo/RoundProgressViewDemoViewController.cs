@@ -9,25 +9,42 @@ namespace RoundProgressViewDemo
 	public partial class RoundProgressViewDemoViewController : UIViewController
 	{
 		private RPView roundProgess;
-
+		private RPView mRoundProgess;
+		private RPView sRoundProgess;
 
 		public RoundProgressViewDemoViewController () : base ("RoundProgressViewDemoViewController", null)
 		{
-			roundProgess = new RPView(new RectangleF(20, 68, 166,166));
+			roundProgess = new RPView(new RectangleF(20, 10, 166,166));
 			roundProgess.TintColor = UIColor.Blue;
 			roundProgess.TextColor = UIColor.FromRGBA(0.70f,0.70f,0.70f,1.0f);
 			roundProgess.Font = UIFont.SystemFontOfSize(50f); 
 			roundProgess.Progress = 0.5f;
 			this.View.Add(roundProgess);
 
-			UISlider percentage = new UISlider(new RectangleF(20,250,200,75));
+			mRoundProgess = new RPView(new RectangleF(20, 200, 104,104));
+			mRoundProgess.TintColor = UIColor.Green;
+			mRoundProgess.TextColor = UIColor.FromRGBA(0.70f,0.70f,0.70f,1.0f);
+			mRoundProgess.Font = UIFont.SystemFontOfSize(25f); 
+			mRoundProgess.Progress = 0.5f;
+			this.View.Add(mRoundProgess);
+
+			sRoundProgess = new RPView(new RectangleF(20, 325, 54,54));
+			sRoundProgess.TintColor = UIColor.Red;
+			sRoundProgess.TextColor = UIColor.FromRGBA(0.70f,0.70f,0.70f,1.0f);
+			sRoundProgess.Font = UIFont.SystemFontOfSize(15f); 
+			sRoundProgess.Progress = 0.5f;
+			this.View.Add(sRoundProgess);
+
+			UISlider percentage = new UISlider(new RectangleF(20,400,200,75));
 
 			percentage.Value = 0.5f;
 			percentage.MinValue = 0.0f;
 			percentage.MaxValue = 1.0f;
 
 			percentage.ValueChanged += (object sender, EventArgs e) => {
-				roundProgess.Progress =percentage.Value;
+				roundProgess.Progress = percentage.Value;
+				mRoundProgess.Progress = percentage.Value;
+				sRoundProgess.Progress = percentage.Value;
 			}; 
 
 			this.View.Add(percentage);
